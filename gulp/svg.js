@@ -8,6 +8,7 @@ module.exports = function svgToSprite() {
       run: function ($) {
         $('[fill]').removeAttr('fill');
         $('[style]').removeAttr('style');
+        $('[stroke]').removeAttr('stroke');
       },
       parserOptions: {xmlMode: true}
     }))
