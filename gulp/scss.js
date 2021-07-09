@@ -11,7 +11,7 @@ module.exports = function scssToCss() {
     .pipe(plumber())
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer( {cascade: false}))
-    .pipe(cleanCSS({debug: true, level: 2, compatibility: '*'}))
+    .pipe(cleanCSS({debug: true, level: {2: { all: false, removeDuplicateRules: true, mergeMedia: true}}, compatibility: '*'}))
     .pipe(cssBeautify())
     .pipe(cssComb())
     .pipe(gulp.dest("build/css"))
